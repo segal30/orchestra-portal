@@ -10,7 +10,7 @@
   },
   {
     "id": 2,
-    "from": "personal manager",
+    "from": "Personal manager",
     "fromAddress": "test@testdomain.com",
     "subject": "Europe festival tour information",
     "dtSent": "Today, 8:54AM",
