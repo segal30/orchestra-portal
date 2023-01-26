@@ -1,0 +1,59 @@
+.sidebar {
+  flex: 1;
+  background: linear-gradient(rgba(242, 242, 244, 0.852), rgba(6, 1, 17, 0.569)),
+    url("https://images.pexels.com/photos/5182979/pexels-photo-5182979.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2")
+      no-repeat center ;
+  
+  
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+  
+ 
+  position: sticky;
+  top: 50px;
+  
+}
+
+.sidebarWrapper {
+  padding: 20px;
+  color: rgb(255, 252, 252);
+}
+
+.sidebarManu {
+  margin-bottom: 10px;
+}
+
+.sidebarTitle {
+  font-size: 15px;
+  font-weight: 400;
+  color: rgb(26, 24, 24);
+}
+
+.sidebarList {
+  list-style: none;
+  padding: 5px;
+}
+
+.sidebarListItem {
+  color: black;
+  font-size: 20px;
+  padding: 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.sidebarListItem:hover {
+  background-color: rgb(166, 161, 163);
+}
+
+.sidebarIcon {
+  margin-right: 5px;
+  font-size: 20px !important;
+  color: rgb(70, 32, 59);
+}
+

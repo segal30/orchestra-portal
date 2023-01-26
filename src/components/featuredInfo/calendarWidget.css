@@ -1,0 +1,9 @@
+.calendarWidget {
+  padding: 30px;
+  cursor: pointer;
+}
+.calendarWidget-main {
+  color: rgb(29, 21, 21);
+  flex-grow: 1;
+  padding: 1px;
+}

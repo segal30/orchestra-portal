@@ -1,0 +1,27 @@
+.featured {
+  margin-top: 20px;
+  padding-bottom: 10px;
+  width: 100%;
+  display: flex;
+  flex: 2;
+  justify-content: space-between;
+}
+.featuredItem {
+  background: linear-gradient(
+      rgba(242, 242, 244, 0.974),
+      rgba(55, 52, 63, 0.854)
+    ),
+    url("https://images.pexels.com/photos/5182979/pexels-photo-5182979.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2")
+      top;
+  background-size: 4000px;
+
+  flex: 2;
+  margin: 0 50px;
+  padding: 30px;
+  height: 420px;
+
+  border-radius: 10px;
+
+  -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
+  box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+}

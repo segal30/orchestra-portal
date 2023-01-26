@@ -1,0 +1,9 @@
+.dashboard {
+  flex: 4;
+  background-color: white;
+}
+
+.dashboardWidgets {
+  display: flex;
+  margin: 5px;
+}

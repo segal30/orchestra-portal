@@ -1,0 +1,31 @@
+[
+  {
+    "id": 1,
+    "from": "Management office",
+    "fromAddress": "test@foofoo.com",
+    "subject": "Musical director replacement updates",
+    "dtSent": "Today, 9:18AM",
+    "read": false,
+    "body": "Hey Mark,<br><br>I saw your post on the message board and I was wondering if you still had that item available. Can you call me if you still do?<br><br>Thanks,<br><b>Gary Lewis</b>"
+  },
+  {
+    "id": 2,
+    "from": "personal manager",
+    "fromAddress": "test@testdomain.com",
+    "subject": "Europe festival tour information",
+    "dtSent": "Today, 8:54AM",
+    "read": false,
+    "body": "Mark,<br>I will be in late today due to an appt.<br>v/r Bob",
+    "attachment": false
+  },
+  {
+    "id": 3,
+    "from": "Orchestra salary office ",
+    "fromAddress": "test@testbar.com",
+    "subject": "Salaries - 2023",
+    "dtSent": "Yesterday, 4:48PM",
+    "read": true,
+    "body": "Here is the last resume for the developer position we posted on SO. Please review and let me know your thoughts!",
+    "attachment": true
+  }
+]

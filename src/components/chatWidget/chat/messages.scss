@@ -1,0 +1,25 @@
+@mixin mobile {
+  @media screen and (max-width: 480px) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+@mixin laptop {
+  @media screen and (max-width: 1200px) {
+    @content;
+  }
+}
+
+
+
+  .messages {
+    background-color: white;
+    border-bottom: solid 1px rgb(223, 215, 215);
+    padding: 10px;
+    height: calc(100% - 110px);
+    overflow: scroll;
+  }
