@@ -2,7 +2,7 @@
   "name": "orchestra-portal",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://segal30.github.io/",
+  "homepage": "http://segal30.github.io/orchestra-portal",
   "dependencies": {
     "@daypilot/daypilot-lite-react": "^3.11.0",
     "@fullcalendar/core": "^6.0.2",
