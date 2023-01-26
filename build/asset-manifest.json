@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.f9e580ce.css",
-    "main.js": "/static/js/main.45f81642.js",
-    "static/media/david_segal.jpg": "/static/media/david_segal.913e5573e3a589add51f.jpg",
-    "static/media/logo.png": "/static/media/logo.946fd082051e18a18398.png",
-    "index.html": "/index.html",
-    "main.f9e580ce.css.map": "/static/css/main.f9e580ce.css.map",
-    "main.45f81642.js.map": "/static/js/main.45f81642.js.map"
+    "main.css": "/orchestra-portal/static/css/main.f9e580ce.css",
+    "main.js": "/orchestra-portal/static/js/main.026ad765.js",
+    "static/media/david_segal.jpg": "/orchestra-portal/static/media/david_segal.913e5573e3a589add51f.jpg",
+    "static/media/logo.png": "/orchestra-portal/static/media/logo.946fd082051e18a18398.png",
+    "index.html": "/orchestra-portal/index.html",
+    "main.f9e580ce.css.map": "/orchestra-portal/static/css/main.f9e580ce.css.map",
+    "main.026ad765.js.map": "/orchestra-portal/static/js/main.026ad765.js.map"
   },
   "entrypoints": [
     "static/css/main.f9e580ce.css",
-    "static/js/main.45f81642.js"
+    "static/js/main.026ad765.js"
   ]
 }
