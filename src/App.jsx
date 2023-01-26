@@ -52,7 +52,7 @@ const App = () => {
       ),
       children: [
         {
-          path: "/orchestra-portal",
+          path: "/",
           element: <Dashboard />,
         },
         {
