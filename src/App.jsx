@@ -52,7 +52,7 @@ const App = () => {
       ),
       children: [
         {
-          path: "/dashboard",
+          path: "/",
           element: <Dashboard />,
         },
         {
