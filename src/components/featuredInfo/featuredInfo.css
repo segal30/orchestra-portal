@@ -5,6 +5,8 @@
   display: flex;
   flex: 2;
   justify-content: space-between;
+  height: 42vh;
+  
 }
 .featuredItem {
   background: linear-gradient(
@@ -16,11 +18,13 @@
   background-size: 4000px;
 
   flex: 2;
-  margin: 0 50px;
-  padding: 30px;
-  height: 420px;
+  margin: 0 25px;
+  padding: 5px;
+  height: 45vh;
 
   border-radius: 10px;
+   position: sticky;
+   
 
   -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
   box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);

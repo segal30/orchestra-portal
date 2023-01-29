@@ -1490,6 +1490,14 @@
     "@firebase/util" "1.8.0"
     "tslib" "^2.1.0"
 
+"@firebase/component@0.6.1":
+  "integrity" "sha512-yvKthG0InjFx9aOPnh6gk0lVNfNVEtyq3LwXgZr+hOwD0x/CtXq33XCpqv0sQj5CA4FdMy8OO+y9edI+ZUw8LA=="
+  "resolved" "https://registry.npmjs.org/@firebase/component/-/component-0.6.1.tgz"
+  "version" "0.6.1"
+  dependencies:
+    "@firebase/util" "1.9.0"
+    "tslib" "^2.1.0"
+
 "@firebase/database-compat@0.3.0":
   "integrity" "sha512-5kzhXdACd+RX/G8k/DKYAuiMYHDHIZ9WFV/ccVoPsC+bxIQEgPilDEtkljY5ZxiKbUj+PEOSYUfYdV/LQMJatQ=="
   "resolved" "https://registry.npmjs.org/@firebase/database-compat/-/database-compat-0.3.0.tgz"
@@ -1537,6 +1545,20 @@
   "integrity" "sha512-xG0CA6EMfYo8YeUxC8FeDzf6W3FX1cLlcAGBYV6Cku12sZRI81oWcu61RSKM66K6kUENP+78Qm8mvroBcm1whw=="
   "resolved" "https://registry.npmjs.org/@firebase/firestore-types/-/firestore-types-2.5.1.tgz"
   "version" "2.5.1"
+
+"@firebase/firestore@^3.8.1":
+  "integrity" "sha512-oc2HMkUnq/zF+g9o974tp5RVCdXCnrU8e5S98ajfWG/hGV+8pr4i6vIa4z0yEXKWGi4X0FguxrC69z1dxEJbNg=="
+  "resolved" "https://registry.npmjs.org/@firebase/firestore/-/firestore-3.8.1.tgz"
+  "version" "3.8.1"
+  dependencies:
+    "@firebase/component" "0.6.1"
+    "@firebase/logger" "0.4.0"
+    "@firebase/util" "1.9.0"
+    "@firebase/webchannel-wrapper" "0.9.0"
+    "@grpc/grpc-js" "~1.7.0"
+    "@grpc/proto-loader" "^0.6.13"
+    "node-fetch" "2.6.7"
+    "tslib" "^2.1.0"
 
 "@firebase/firestore@3.8.0":
   "integrity" "sha512-aKwfZ73FmOV8e/dN0anDtrq6+1IhX4zmjxUcXcgaypZ14q6bq0QpUdlRxjsfiUQ5m3H3MwWWIFOcT5Xa89sIkw=="
@@ -1727,6 +1749,13 @@
   "integrity" "sha512-clK6pTTxIiLMYz4UrvDTVAs2rIaOiroAuFdX67C0JalvEwzi6Vv8li6xAGj38tkj7Qax06mosM1fQkxf2h4VTg=="
   "resolved" "https://registry.npmjs.org/@firebase/util/-/util-1.8.0.tgz"
   "version" "1.8.0"
+  dependencies:
+    "tslib" "^2.1.0"
+
+"@firebase/util@1.9.0":
+  "integrity" "sha512-oeoq/6Sr9btbwUQs5HPfeww97bf7qgBbkknbDTXpRaph2LZ23O9XLCE5tJy856SBmGQfO4xBZP8dyryLLM2nSQ=="
+  "resolved" "https://registry.npmjs.org/@firebase/util/-/util-1.9.0.tgz"
+  "version" "1.9.0"
   dependencies:
     "tslib" "^2.1.0"
 

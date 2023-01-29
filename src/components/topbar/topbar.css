@@ -33,6 +33,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
 }
 
 button {

@@ -1,20 +1,22 @@
+
 .sidebar {
-  flex: 1;
+  flex: 0.7;
   background: linear-gradient(rgba(242, 242, 244, 0.852), rgba(6, 1, 17, 0.569)),
     url("https://images.pexels.com/photos/5182979/pexels-photo-5182979.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2")
-      no-repeat center ;
-  
+      no-repeat center;
+  height: calc(100vh - 50px);
   
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-
-  
- 
   position: sticky;
   top: 50px;
-  
+}
+.sidebar > * {
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 30ch;
 }
 
 .sidebarWrapper {
@@ -56,4 +58,3 @@
   font-size: 20px !important;
   color: rgb(70, 32, 59);
 }
-

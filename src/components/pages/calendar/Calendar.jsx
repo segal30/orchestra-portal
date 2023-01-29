@@ -82,15 +82,15 @@ class Calendar extends React.Component {
     }
   };
 
-handleEventClick = (clickInfo) => {
-    if (
-      window.confirm(
-        `Are you sure you want to delete the event '${clickInfo.event.title}'`
-       )
-   ) {
-      clickInfo.event.remove();
-    }
-   };
+// handleEventClick = (clickInfo) => {
+//     if (
+//       window.confirm(
+//         `Are you sure you want to delete the event '${clickInfo.event.title}'`
+//        )
+//    ) {
+//       clickInfo.event.remove();
+//     }
+//    };
 
 //   handleEvents = (events) => {
 //     this.setState({
@@ -108,19 +108,19 @@ function renderEventContent(eventInfo) {
   );
 }
 
-function renderSidebarEvent(event) {
-  return (
-    <li key={event.id}>
-      <b>
-        {formatDate(event.start, {
-          year: "numeric",
-          month: "short",
-          day: "numeric",
-        })}
-      </b>
-      <i>{event.title}</i>
-    </li>
-  );
-}
+// function renderSidebarEvent(event) {
+//   return (
+//     <li key={event.id}>
+//       <b>
+//         {formatDate(event.start, {
+//           year: "numeric",
+//           month: "short",
+//           day: "numeric",
+//         })}
+//       </b>
+//       <i>{event.title}</i>
+//     </li>
+//   );
+// }
 
 export default Calendar;

@@ -1,10 +1,8 @@
 import React, { useContext } from "react";
-import { signOut } from "firebase/auth";
 import "./topbar.css";
 import Logo from "../../assets/logo.png";
 import { Link } from "react-router-dom";
-import { auth } from "../../firebase";
-import { AuthContext } from "../../context/AuthContext";import LogoutIcon from "@mui/icons-material/Logout";
+import { AuthContext } from "../../context/AuthContext";
 
 const Topbar = () => {
   const { currentUser } = useContext(AuthContext);
@@ -20,9 +18,7 @@ const Topbar = () => {
           </Link>
         </div>
         <div className="topRight">
-          <button onClick={() => signOut(auth)}>
-            <LogoutIcon style={{ color: "black", height: '15px', backgroundColor: 'white' }} />
-          </button>
+          Hi, {currentUser.displayName}
           <Link to="/user/:userId" style={{ textDecoration: "none" }}>
             <img src={currentUser.photoURL} alt="avatar" className="avatar" />
           </Link>
@@ -33,4 +29,3 @@ const Topbar = () => {
 };
 
 export default Topbar;
-

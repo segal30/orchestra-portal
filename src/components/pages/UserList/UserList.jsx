@@ -3,53 +3,95 @@ import "./userList.css";
 import { DataGrid } from "@mui/x-data-grid";
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 import { Link } from "react-router-dom";
+import { db, storage } from "../../../firebase";
+import { collection, getDocs } from "firebase/firestore";
 
 export default function UserList() {
   const [users, setUsers] = useState([]);
+
+  const fetchUsers = async () => {
+    await getDocs(collection(db, "users")).then((querySnapshot) => {
+      const newData = querySnapshot.docs.map((doc) => ({
+        ...doc.data(),
+        id: doc.id,
+      }));
+      setUsers(newData);
+    });
+  };
+
+  useEffect(() => {
+    fetchUsers();
+  }, []);
 
   const handleDelete = (id) => {
     setUsers(users.filter((user) => user.id !== id));
   };
 
-  useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/users")
-      .then((users) => users.json())
-      .then((users) => setUsers(users));
-  }, []);
-
   console.log(users);
 
   const columns = [
     {
-      field: "id",
-      headerName: "ID",
-      width: 40,
+      field: "url",
+      headerName: "Photo",
+      width: 120,
+      editable: true,
+      renderCell: (params) => (
+        <img
+          className="userListImg"
+          alt="userListImg"
+          src={params.row.photoURL}
+        />
+      ),
+    },
+
+    {
+      field: "name",
+      headerName: "Name",
+      width: 150,
       renderCell: (params) => {
-        return <div className="userListUser">{params.row.id}</div>;
+        return <div>{params.row.displayName}</div>;
       },
     },
     {
-      field: "url",
-      headerName: "Photo",
-      width: 90,
-      editable: true,
-      renderCell: (params) => (
-        <img className="userListImg" alt="userListImg" src={params.value} />
-      ),
+      field: "instrument",
+      headerName: "Instrument",
+      width: 110,
+      renderCell: (params) => {
+        return <div>{params.row.instrument}</div>;
+      },
     },
-    { field: "username", headerName: "Username", width: 110 },
-    { field: "name", headerName: "Name", width: 110 },
-    { field: "email", headerName: "Email", width: 200 },
-    { field: "phone", headerName: "Phone", width: 120 },
+    {
+      field: "email",
+      headerName: "Email",
+      width: 220,
+      renderCell: (params) => {
+        return <div>{params.row.email}</div>;
+      },
+    },
+    {
+      field: "phone",
+      headerName: "Phone",
+      width: 120,
+      renderCell: (params) => {
+        return <div>{params.row.phoneNumber}</div>;
+      },
+    },
     {
       field: "address",
       headerName: "Address",
       width: 250,
       renderCell: (params) => {
-        return <div>{params.row.address.city}</div>;
+        return <div>{params.row.address}</div>;
       },
     },
-    { field: "", headerName: "Member since", width: 120 },
+    {
+      field: "",
+      headerName: "Member since",
+      width: 120,
+      renderCell: (params) => {
+        return <div>{params.row.memberSince}</div>;
+      },
+    },
     {
       field: "action",
       headerName: "Action",
@@ -72,22 +114,13 @@ export default function UserList() {
 
   return (
     <div className="userList">
-      <div className="userListTitle">
-        Add New User
-        <Link
-          to="/newUser"
-          style={{ textDecoration: "none" }}
-          className="linkToNewUser"
-        >
-          Add New
-        </Link>
-      </div>
+      <div className="userListTitle">Members</div>
       <DataGrid
         rows={users}
         disableSelectionOnClick
         columns={columns}
         loading={!users.length}
-        pageSize={25}
+        pageSize={100}
         rowsPerPageOptions={[30]}
         checkboxSelection
       />

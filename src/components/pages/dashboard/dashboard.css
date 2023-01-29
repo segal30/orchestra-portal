@@ -1,9 +1,15 @@
 .dashboard {
   flex: 4;
   background-color: white;
+  position: sticky;
+  width: 100%;
+  z-index: 999;
+  
 }
 
 .dashboardWidgets {
+  width: 100%;
+  z-index: 999;
   display: flex;
   margin: 5px;
 }

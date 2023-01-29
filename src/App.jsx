@@ -15,12 +15,12 @@ import Calendar from "./components/pages/calendar/Calendar";
 import Inbox from "./components/pages/inbox/Inbox";
 import UserList from "./components/pages/UserList/UserList";
 import User from "./components/pages/user/User";
-import { NewUser } from "./components/pages/newUser/NewUser";
+// import { NewUser } from "./components/pages/newUser/NewUser";
 import { useContext } from "react";
 import { AuthContext } from "./context/AuthContext";
 
 const App = () => {
-  const { currentUser } = useContext(AuthContext);
+  const {currentUser}  = useContext(AuthContext);
 
   const ProtectedRoute = ({ children }) => {
     if (!currentUser) {
@@ -72,10 +72,10 @@ const App = () => {
           path: "/user/:userId",
           element: <User />,
         },
-        {
-          path: "/newUser",
-          element: <NewUser />,
-        },
+        // {
+        //   path: "/newUser",
+        //   element: <NewUser />,
+        // },
       ],
     },
     {

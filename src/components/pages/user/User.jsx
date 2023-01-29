@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./user.css";
-import avatarPic from "../../../assets/david_segal.jpg";
 import PermIdentityIcon from "@mui/icons-material/PermIdentity";
 import CakeIcon from "@mui/icons-material/Cake";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
@@ -9,55 +8,68 @@ import TimerIcon from "@mui/icons-material/Timer";
 import EmailIcon from "@mui/icons-material/Email";
 import PublishIcon from "@mui/icons-material/Publish";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../../context/AuthContext";
+import { auth } from "../../../firebase";
+import { signOut } from "firebase/auth";
 
-export default function User() {
+
+const User = () => {
+  const { currentUser } = useContext(AuthContext);
+
   return (
     <div className="user">
       <div className="userTitleContainer">
-        <h1 className="userTitle">Edit User</h1>
-        <Link to="/newUser">
-          <button className="userAddButton">Create</button>
-        </Link>
+        <h1 className="userTitle"></h1>
       </div>
       <div className="userContainer">
         <div className="userShow">
           <div className="userShowTop">
-            <img src={avatarPic} alt="" className="userShowImg" />
+            <img src={currentUser.photoURL} alt="avatar" className="avatar" />
             <div className="userShowTopTitle">
-              <span className="userShowUsername">David Segal</span>
-              <span className="userShowUserTitle">Double bass</span>
+              <span className="userShowUsername">
+                {currentUser.displayName}
+              </span>
+              <span className="userShowUserTitle">{}</span>
             </div>
           </div>
           <div className="userShowBottom">
             <span className="userShowTitle">Employee details</span>
             <div className="userShowInfo">
               <PermIdentityIcon className="userShowIcon" />
-              <span className="userShowInfoTitle">segal30</span>
+              <span className="userShowInfoTitle">{currentUser.userName}</span>
             </div>
             <div className="userShowInfo">
               <CakeIcon className="userShowIcon" />
-              <span className="userShowInfoTitle">Jenuary 17th, 1986</span>
-            </div>
-            <div className="userShowInfo">
-              <EmailIcon className="userShowIcon" />
-              <span className="userShowInfoTitle">segal30@gmail.com</span>
-            </div>
-            <div className="userShowInfo">
-              <LocalPhoneIcon className="userShowIcon" />
-              <span className="userShowInfoTitle">+1 347 762 5465</span>
-            </div>
-            <div className="userShowInfo">
-              <HomeIcon className="userShowIcon" />
               <span className="userShowInfoTitle">
-                745 Lincoln Pl, Brooklyn, NY 11216
+                {currentUser.dateOfBirth}
               </span>
             </div>
             <div className="userShowInfo">
+              <EmailIcon className="userShowIcon" />
+              <span className="userShowInfoTitle">{currentUser.email}</span>
+            </div>
+            <div className="userShowInfo">
+              <LocalPhoneIcon className="userShowIcon" />
+              <span className="userShowInfoTitle">
+                {currentUser.phoneNumber}
+              </span>
+            </div>
+            <div className="userShowInfo">
+              <HomeIcon className="userShowIcon" />
+              <span className="userShowInfoTitle">{currentUser.address}</span>
+            </div>
+            <div className="userShowInfo">
               <TimerIcon className="userShowIcon" />
-              <span className="userShowInfoTitle">Oct' 2014</span>
+              <span className="userShowInfoTitle">
+                {currentUser.memberSince}
+              </span>
             </div>
           </div>
+          <div className="logout">
+            <button onClick={() => signOut(auth)}>Logout</button>
+          </div>
         </div>
+
         <div className="userUpdate">
           <span className="userUpdateTitle">Edit</span>
           <form className="userUpdateForm">
@@ -88,19 +100,15 @@ export default function User() {
               </div>
               <div className="userUpdateItem">
                 <label>Birthday</label>
-                <input
-                  type="text"
-                  placeholder=""
-                  className="userUpdateInput"
-                />
+                <input type="text" placeholder="" className="userUpdateInput" />
               </div>
             </div>
             <div className="userUpdateRight">
               <div className="userUpdateUpload">
                 <img
+                  src={currentUser.photoURL}
+                  alt="avatar"
                   className="userUpdateImg"
-                  src={avatarPic}
-                  alt="avatar-pic"
                 />
                 <label htmlFor="file">
                   <PublishIcon className="userUpdateIcon" />
@@ -114,4 +122,6 @@ export default function User() {
       </div>
     </div>
   );
-}
+};
+
+export default User;
